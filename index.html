@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Blackjack
+  </title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="global-data.js"></script>
+  <script defer src="caching-dom-elements.js"></script>
+  <script defer src="global-functions.js"></script>
+  <script defer src="bet-function.js"></script>
+</head>
+<body>
+  <section>
+    <p class="remaining-cards"></p>
+  </section>
+
+  <section class="dealer">
+    <h1>dealer</h1>
+    <p class="total"></p>
+    <p class="result"></p>
+    <div class="cards"></div>
+  </section>
+  
+  <section class="player">
+    <h1>player</h1>
+    <p class="total"></p>
+    <p class="result"></p>
+    <div class="cards"></div>
+    <input class="bet-input" type="number">
+    <button class="bet-btn">bet</button>
+    <p class="bet-amount"></p>
+    <p class="available-balance"></p>
+  </section>
+  
+  <section class="buttons">
+    <button class="stand-btn">stand</button>
+    <button class="hit-btn">hit</button>
+    <button class="double-down-btn">double down</button>
+    <button class="split-btn">split</button>
+    <button class="surrender-btn">surrender</button>
+  </section>
+
+</body>
+</html>
