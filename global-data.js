@@ -5,7 +5,7 @@ const cardsTemplate = {
 
 const faceCards = ["J", "Q", "K"]
 
-const cardsSet = 3
+const deck = 3
 let cards = []
 
 let dealedCardsTotal = {

@@ -1,6 +1,6 @@
 
 const makeCards = () => {
-  for (let i = 0; i < cardsSet; i++) {
+  for (let i = 0; i < deck; i++) {
     for (let suit of cardsTemplate.suits) {
       for (let rank of cardsTemplate.ranks) {
         let card = {suit: suit, rank: rank}
