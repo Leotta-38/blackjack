@@ -71,4 +71,7 @@ const init = () => {
   hitBtn.disabled = true
   doubleDownBtn.disabled = true
   surrenderBtn.disabled = true
+
+  // reset ifBj
+  ifBj = false
 }

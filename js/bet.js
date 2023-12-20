@@ -14,14 +14,19 @@ const betMoney = () => {
 }
 
 // define the function which is called when the player click the "bet" button
-const handleClickBetBtn = () =>  {
+const handleClickBetBtn = async () =>  {
   if (betMoney()) {
-    for (let i = 1; i < 3; i++) {
-      dealCard('player', i)
-      dealCard('dealer', i)
+    winningsElem.textContent = ''
+    for (let person of people) {
+      for (let i = 1; i < 3; i++) {
+        await sleep(1000)
+        dealCard(person, i)
+      }
     }
-    if (!checkifBJ('player')) {
-      if (!checkifBJ('dealer')) {
+    checkifBJ('player')
+    if (!ifBj) {
+      checkifBJ('dealer')
+      if (!ifBj) {
         standBtn.disabled = false
         hitBtn.disabled = false
         doubleDownBtn.disabled = false

@@ -1,15 +1,15 @@
 // define the function to check if the hand is blackjack or not
-const checkifBJ = (person) => {
+const checkifBJ = async (person) => {
   const personResultsElem = document.querySelector(`.${person} .result`)
   if (handValue[person][1] === 21) {
+    ifBj = true
     if(person === 'dealer') {
+      await sleep(1000)
       const backBlueElem = document.querySelector('#back-blue')
-      setTimeout(() => {backBlueElem.removeAttribute('id')}, 1000)
+      backBlueElem.removeAttribute('id')
     }
-    setTimeout(() => {personResultsElem.textContent = 'BLACKJACK!!!'}, 2000)
-    calculateWinnings(person, true, false)
-    return true
-  } else {
-    return false
+    await sleep(1000)
+    personResultsElem.textContent = 'BLACKJACK!!!'
+    calculateWinnings(person, true, false, false)
   }
 }

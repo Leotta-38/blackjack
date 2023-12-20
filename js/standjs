@@ -1,5 +1,30 @@
-const stand = () => {
-  console.log('test');
+const checkIfUnder17 = () => {
+  const checkA = handValue.dealer.length
+  if (checkA === 1) {
+    if (handValue.dealer[0] < 17) {
+      return true
+    } else {
+      return false
+    }
+  } else if (checkA === 2) {
+    if (handValue.dealer[0] < 17 && handValue.dealer[1] < 17) {
+      return true
+    } else {
+      return false
+    }
+  }
+}
+
+
+const stand = async () => {
+  const backBlueElem = document.querySelector('#back-blue')
+  backBlueElem.removeAttribute('id')
+  await sleep(1000)
+  while (checkIfUnder17()) {
+    dealCard('dealer')
+    checkifBusted('dealer')
+    await sleep(1000)
+  }    
 }
 
 // define the function which is called when the player click the "stand" button

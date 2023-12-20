@@ -1,15 +1,3 @@
-// the function to show the current number of remaining cards
-const updateRemainingCards = () => {
-  remainingCardsElem.textContent = shuffledDeck.length
-}
-
-
-// the function to show the current available to bet balance
-const updateBalance = () => {
-  availableBalanceElem.textContent = `your 'available to bet' balance is: $${availableBalance}`
-}
-
-
 // the function to show the current available to bet balance
 const dealCard = (person, count) => {
 
@@ -45,24 +33,3 @@ const dealCard = (person, count) => {
 
   updateRemainingCards()
 }
-
-
-
-// const checkifBusted = (person) => {
-//   const personResultsElem = document.querySelector(`.${person} .result`)
-//   if (handValue[person][0] === 21 || handValue[person][1] === 21) {
-//     if (count === 2) {
-//       personResultsElem.textContent = 'BLACKJACK!!!'
-//       availableBalance += 2.5 * betAmount
-//     } else {
-//       personResultsElem.textContent = 'Win!!!'
-//       availableBalance += 2 * betAmount
-//     }
-//     updateBalance()
-//     console.log('congrats!');
-//   } else if (handValue[person][0] > 21) {
-//     personResultsElem.textContent = 'Busted!!!'
-//     console.log('bust!');
-//   }
-// }
-
