@@ -6,42 +6,70 @@
   <title>
     Blackjack
   </title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="global-data.js"></script>
-  <script defer src="caching-dom-elements.js"></script>
-  <script defer src="global-functions.js"></script>
-  <script defer src="init.js"></script>
-  <script defer src="bet-function.js"></script>
+  <link href="css/card-library/css/cardstarter.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/global-data.js"></script>
+  <script defer src="js/caching-dom-elements.js"></script>
+  <script defer src="js/start.js"></script>
+  <script defer src="js/global-functions.js"></script>
+  <script defer src="js/init.js"></script>
+  <script defer src="js/bet.js"></script>
+  <script defer src="js/calculate-winnings.js"></script>
+  <script defer src="js/check-if-bj.js"></script>
+  <script defer src="js/standjs"></script>
+  <script defer src="js/surrender.js"></script>
 </head>
 <body>
-  <section>
-    <p class="remaining-cards"></p>
+  <section class="starting-screen">
+    <h1>Blackjack</h1>
+    <p>How much are you bringing to play game of blackjack?</p>
+    <input class="amount-money-input" type="number">
+    <button class="start-btn">start</button>
   </section>
 
-  <section class="dealer">
-    <h1>dealer</h1>
-    <p class="hand-value"></p>
-    <p class="result"></p>
-    <div class="cards"></div>
+  <section class="house-rule">
+    <ul>
+      <li>Minimum bet $1</li>
+      <li>Dealer must stand on all 17's</li>
+      <li>6 deck</li>
+      <li>Penetration 70%</li>
+      <li>Blackjack pays 3 to 2</li>
+      <ul>
+        <li>If your hand is Blackjack, you will win whatever the dealer's hand is.</li>
+        <li>The dealer will check what his hole card is if your hand is not Blackjack. If it makes his hand Blackjack, it will be revealed before your action.</li>
+      </ul>
+    </ul>
   </section>
+
+  <section class="game">
+    <h1>Blackjack</h1>
+    <section>
+      <p class="remaining-cards"></p>
+    </section>
   
-  <section class="player">
-    <h1>player</h1>
-    <p class="hand-value"></p>
-    <p class="result"></p>
-    <div class="cards"></div>
-    <input class="bet-input" type="number">
-    <button class="bet-btn">bet</button>
-    <p class="bet-amount"></p>
-    <p class="available-balance"></p>
-  </section>
-  
-  <section class="buttons">
-    <button class="stand-btn">stand</button>
-    <button class="hit-btn">hit</button>
-    <button class="double-down-btn">double down</button>
-    <button class="split-btn">split</button>
-    <button class="surrender-btn">surrender</button>
+    <section class="dealer">
+      <h1>dealer</h1>
+      <p class="result"></p>
+      <div class="card-container"></div>
+    </section>
+    
+    <section class="player">
+      <h1>player</h1>
+      <p class="result"></p>
+      <div class="card-container"></div>
+      <input class="bet-input" type="number">
+      <button class="bet-btn">bet</button>
+      <p class="bet-amount"></p>
+      <p class="available-balance"></p>
+    </section>
+    
+    <section class="buttons">
+      <button class="stand-btn">stand</button>
+      <button class="hit-btn">hit</button>
+      <button class="double-down-btn">double down</button>
+      <button disabled class="split-btn">split</button>
+      <button class="surrender-btn">surrender</button>
+    </section>
   </section>
 
 </body>

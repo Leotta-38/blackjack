@@ -1,0 +1,11 @@
+const stand = () => {
+  console.log('test');
+}
+
+// define the function which is called when the player click the "stand" button
+const handleClickStandBtn = () => {
+  stand()
+}
+
+// call the "handleClickStandBtn" function when the player click the "stand" button
+standBtn.addEventListener('click', handleClickStandBtn)

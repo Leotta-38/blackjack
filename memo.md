@@ -1,4 +1,4 @@
-# Leotta BlackJack House Rule
+# Leotta Blackjack House Rule
 
 - minimum bet $1
 

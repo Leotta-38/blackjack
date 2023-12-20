@@ -1,6 +1,6 @@
 // the function to show the current number of remaining cards
 const updateRemainingCards = () => {
-  remainingCardsElem.textContent = cards.length
+  remainingCardsElem.textContent = shuffledDeck.length
 }
 
 
@@ -11,44 +11,37 @@ const updateBalance = () => {
 
 
 // the function to show the current available to bet balance
-const dealCard = person => {
+const dealCard = (person, count) => {
 
-  // pick up a card randomly and delete it from the datalist
-  let randomNumber = Math.floor(Math.random() * cards.length)
-  let dealedCard = cards[randomNumber]
-  cards.splice(randomNumber, 1)
+  // pick up the first card from shuffled deck and delete it from the deck
+  let dealedCard = shuffledDeck[0]
+  shuffledDeck.shift()
 
   // create new div for each card and show it on the screen
   const elem = document.createElement('div')
-  elem.className = 'card'
-  elem.textContent = `${dealedCard.suit} ${dealedCard.rank}`
+  elem.className = `card ${dealedCard.face}`
+  if (person === 'dealer' && count === 2) {
+    elem.setAttribute('id', 'back-blue')
+  }
   
-  const personCardsElem = document.querySelector(`.${person} .cards`)
+  const personCardsElem = document.querySelector(`.${person} .card-container`)
   personCardsElem.appendChild(elem)
 
-  // calcurate the hand value
+  // calculate the hand value
   let lengthOfhandValue = handValue[person].length
-  if (dealedCard.rank === "A") {
+  if (dealedCard.value === "A") {
     handValue[person][1] = handValue[person][0]
     handValue[person][0] += 1
     handValue[person][1] += 11
-  } else if (faceCards.includes(dealedCard.rank)) {
-    for (let i = 0; i < lengthOfhandValue; i++) {
-      handValue[person][i] += 10
-    }
   } else {
     for (let i = 0; i < lengthOfhandValue; i++) {
-      handValue[person][i] += dealedCard.rank
+      handValue[person][i] += dealedCard.value
     }
   }
 
   if (handValue[person][1] > 21) {
     handValue[person].pop()
   }
-  
-  // show the hand value on the screen
-  const personHandValueElem = document.querySelector(`.${person} .hand-value`)
-  personHandValueElem.textContent = handValue[person]
 
   updateRemainingCards()
 }
@@ -73,11 +66,3 @@ const dealCard = person => {
 //   }
 // }
 
-
-
-const checkifBJ = (person) => {
-  const personResultsElem = document.querySelector(`.${person} .result`)
-  if (handValue[person][1] === 21) {
-    personResultsElem.textContent = 'BLACKJACK!!!'
-  }
-}
