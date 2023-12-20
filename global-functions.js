@@ -1,69 +1,24 @@
-
-const makeCards = () => {
-  for (let i = 0; i < deck; i++) {
-    for (let suit of cardsTemplate.suits) {
-      for (let rank of cardsTemplate.ranks) {
-        let card = {suit: suit, rank: rank}
-        cards.push(card)
-      }
-    }
-  }
-}
-
+// the function to show the current number of remaining cards
 const updateRemainingCards = () => {
   remainingCardsElem.textContent = cards.length
 }
 
+
+// the function to show the current available to bet balance
 const updateBalance = () => {
   availableBalanceElem.textContent = `your 'available to bet' balance is: $${availableBalance}`
 }
 
-const checkif21andBusted = (person) => {
-  const personResultsElem = document.querySelector(`.${person} .result`)
-  if (dealedCardsTotal[person][0] === 21 || dealedCardsTotal[person][1] === 21) {
-    if (count === 2) {
-      personResultsElem.textContent = 'BLACKJACK!!!'
-      availableBalance += 2.5 * betAmount
-    } else {
-      personResultsElem.textContent = 'Win!!!'
-      availableBalance += 2 * betAmount
-    }
-    updateBalance()
-    console.log('congrats!');
-  } else if (dealedCardsTotal[person][0] > 21) {
-    personResultsElem.textContent = 'Busted!!!'
-    console.log('bust!');
-  }
-}
 
-
+// the function to show the current available to bet balance
 const dealCard = person => {
+
+  // pick up a card randomly and delete it from the datalist
   let randomNumber = Math.floor(Math.random() * cards.length)
   let dealedCard = cards[randomNumber]
   cards.splice(randomNumber, 1)
 
-  let lengthOfDealedCardsTotal = dealedCardsTotal[person].length
-  if (dealedCard.rank === "A") {
-    dealedCardsTotal[person][1] = dealedCardsTotal[person][0]
-    dealedCardsTotal[person][0] += 1
-    dealedCardsTotal[person][1] += 11
-  } else if (faceCards.includes(dealedCard.rank)) {
-    for (let i = 0; i < lengthOfDealedCardsTotal; i++) {
-      dealedCardsTotal[person][i] += 10
-    }
-  } else {
-    for (let i = 0; i < lengthOfDealedCardsTotal; i++) {
-      dealedCardsTotal[person][i] += dealedCard.rank
-    }
-  }
-
-  if (dealedCardsTotal[person][1] > 21) {
-    dealedCardsTotal[person].pop()
-  }
-  
-  const personTotalElem = document.querySelector(`.${person} .total`)
-  personTotalElem.textContent = dealedCardsTotal[person]
-
+  // create new div for each card and show it on the screen
   const elem = document.createElement('div')
   elem.className = 'card'
   elem.textContent = `${dealedCard.suit} ${dealedCard.rank}`
@@ -71,20 +26,58 @@ const dealCard = person => {
   const personCardsElem = document.querySelector(`.${person} .cards`)
   personCardsElem.appendChild(elem)
 
-  updateRemainingCards()
+  // calcurate the hand value
+  let lengthOfhandValue = handValue[person].length
+  if (dealedCard.rank === "A") {
+    handValue[person][1] = handValue[person][0]
+    handValue[person][0] += 1
+    handValue[person][1] += 11
+  } else if (faceCards.includes(dealedCard.rank)) {
+    for (let i = 0; i < lengthOfhandValue; i++) {
+      handValue[person][i] += 10
+    }
+  } else {
+    for (let i = 0; i < lengthOfhandValue; i++) {
+      handValue[person][i] += dealedCard.rank
+    }
+  }
 
-  count++
+  if (handValue[person][1] > 21) {
+    handValue[person].pop()
+  }
+  
+  // show the hand value on the screen
+  const personHandValueElem = document.querySelector(`.${person} .hand-value`)
+  personHandValueElem.textContent = handValue[person]
+
+  updateRemainingCards()
 }
 
 
 
-const init = () => {
-  makeCards()
-  updateRemainingCards()
-  updateBalance()
-}
+// const checkifBusted = (person) => {
+//   const personResultsElem = document.querySelector(`.${person} .result`)
+//   if (handValue[person][0] === 21 || handValue[person][1] === 21) {
+//     if (count === 2) {
+//       personResultsElem.textContent = 'BLACKJACK!!!'
+//       availableBalance += 2.5 * betAmount
+//     } else {
+//       personResultsElem.textContent = 'Win!!!'
+//       availableBalance += 2 * betAmount
+//     }
+//     updateBalance()
+//     console.log('congrats!');
+//   } else if (handValue[person][0] > 21) {
+//     personResultsElem.textContent = 'Busted!!!'
+//     console.log('bust!');
+//   }
+// }
 
-//execute the "init" function when the page is reloaded 
-window.onload = () => {
-  init();
+
+
+const checkifBJ = (person) => {
+  const personResultsElem = document.querySelector(`.${person} .result`)
+  if (handValue[person][1] === 21) {
+    personResultsElem.textContent = 'BLACKJACK!!!'
+  }
 }
