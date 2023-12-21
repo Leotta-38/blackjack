@@ -1,13 +1,13 @@
 const double = async () => {
   availableBalance -= betAmount
   betAmount += betAmount
-  betAmountElem.textContent = `your bet amount is: $${betAmount}`
+  betAmountElem.textContent = betAmount.toLocaleString()
   updateBalance()
-
-  await sleep(ms)
+  
+  await sleep(dealWaitTime)
   ifBusted = true
   dealCard('player')
-  await sleep(ms)
+  await sleep(dealWaitTime)
   checkifBusted('player')
   if (!ifBusted) {
     stand()

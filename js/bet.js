@@ -1,15 +1,16 @@
 // define the function to get input value and show it on the screen
 const betMoney = () => {
-  betAmount = Number(betInput.value)
+  betAmount = Number(betInput.value.replaceAll(regex, ''))
   if (Math.floor(betAmount) === betAmount && betAmount <= availableBalance && betAmount > 0) {
-    betAmountElem.textContent = `your bet amount is: $${betAmount}`
+    betAmountElem.textContent = betAmount.toLocaleString()
     
     availableBalance -= betAmount
     updateBalance()
 
-    betInput.style.display = 'none'
-    betBtn.style.display = 'none'
+    betBtn.disabled = true
     return true
+  } else {
+    return false
   }
 }
 
@@ -19,7 +20,7 @@ const handleClickBetBtn = async () =>  {
     winningsElem.textContent = ''
     for (let person of people) {
       for (let i = 1; i < 3; i++) {
-        await sleep(ms)
+        await sleep(dealWaitTime)
         dealCard(person, i)
       }
     }
@@ -32,7 +33,8 @@ const handleClickBetBtn = async () =>  {
         doubleDownBtn.disabled = false
         surrenderBtn.disabled = false
       }
-    } 
+    }
+    checkBalance()
   }
 }
 

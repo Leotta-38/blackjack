@@ -46,8 +46,7 @@ const init = () => {
 
   // reset the bet amount
   betAmountElem.textContent = ''
-  betInput.style.display = 'inline'
-  betBtn.style.display = 'inline'
+  betBtn.disabled = false
 
   // reset all the dealed cards
   const cardElemALl = document.querySelectorAll('.card')
@@ -62,9 +61,7 @@ const init = () => {
   }
 
   // reset the result message
-  for (let resultElem of resultElemAll) {
     resultElem.textContent = ''
-  }
 
   // disable all the button except bet
   standBtn.disabled = true

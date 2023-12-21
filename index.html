@@ -23,47 +23,63 @@
   <script defer src="js/surrender.js"></script>
 </head>
 <body>
+  <header></header>
+
   <section class="starting-screen">
     <h1>Blackjack</h1>
     <p>How much money do you have to play the game?</p>
-    <input class="amount-money-input" type="number">
-    <button class="start-btn">start</button>
+    <input class="amount-money-input" type="text"><br>
+    <button class="start-btn">Start</button>
   </section>
 
-  <section class="house-rule">
+  <section class="house-rules">
+    <p>House Rules</p>
     <ul>
       <li>Minimum bet $1</li>
       <li>Dealer must stand on all 17's</li>
-      <li>6 deck</li>
+      <li>6 decks</li>
       <li>Penetration 70%</li>
       <li>Blackjack pays 3 to 2</li>
-      <ul>
+      <ul class="disappear">
         <li>You will win if you get a Blackjack, regardless of the dealer's hand.</li>
         <li>The dealer will check what his hole card is if you do not have a Blackjack. If he gets a Blackjack, he will reveal it immediately.</li>
       </ul>
     </ul>
   </section>
 
-  <section class="game">
-    <h1>Blackjack</h1>
-    <section>
+  <section class="game">    
+    <section class="deck-place">
+      <p>Number of Cards</p>
+      <div class="card-copy back-blue-copy"></div>
       <p class="remaining-cards"></p>
     </section>
+    
+    <h2>Blackjack</h2>
+    
+    <section class="game-field">
+      <div class="dealer">
+        <h3>dealer</h3>
+        <img src="imgs/casino_dealer_man.png" alt="casino_dealer_man" class="dealer-img">
+        <div class="card-container"></div>
+      </div>
   
-    <section class="dealer">
-      <h1>dealer</h1>
-      <p class="result"></p>
-      <div class="card-container"></div>
+      <div class="result-display">
+          <p class="result"></p>
+      </div>
+      
+      <div class="player">
+        <div class="card-container"></div>
+        <h3>player</h3>
+      </div>
     </section>
     
-    <section class="player">
-      <h1>player</h1>
-      <p class="result"></p>
-      <p class="winnings"></p>
-      <div class="card-container"></div>
-      <input class="bet-input" type="number">
+    <section class="bet-status">
+      <div class="bet-discription">
+        <p class="winnings"></p>
+        <p>your bet amount: $<span class="bet-amount"></span></p>
+      </div>
+      <input class="bet-input" type="text">
       <button class="bet-btn">bet</button>
-      <p class="bet-amount"></p>
       <p class="available-balance"></p>
     </section>
     
@@ -76,5 +92,6 @@
     </section>
   </section>
 
+  <footer></footer>
 </body>
 </html>

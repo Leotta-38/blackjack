@@ -1,11 +1,13 @@
 // define the function which is called when the player click the "start" button
 const handleClickStartBtn = () =>  {
-  availableBalance = Number(amountMoneyInput.value)
+  availableBalance = Number(amountMoneyInput.value.replaceAll(regex, ''))
   if (availableBalance > 0) {
     originalDeck = buildOriginalDeck()
     init();
     startingScreenElem.style.display = 'none'
+    disappearElem.style.display = 'none'
     gameElem.style.display = 'block'
+    houseRuleElem.classList.add('during-game')
   }
 }
 

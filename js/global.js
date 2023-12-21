@@ -1,3 +1,4 @@
+
 // template to make the cards
 const suits = ['s', 'c', 'd', 'h'];
 const ranks = ['02', '03', '04', '05', '06', '07', '08', '09', '10', 'J', 'Q', 'K', 'A'];
@@ -34,20 +35,21 @@ let ifBusted = false
 
 // caching dom element references
 
-// to show something
+// elem
 const startingScreenElem = document.querySelector('.starting-screen')
-const houseRuleElem = document.querySelector('.house-rule')
+const houseRuleElem = document.querySelector('.house-rules')
+const disappearElem = document.querySelector('.disappear')
 const gameElem = document.querySelector('.game')
 const remainingCardsElem = document.querySelector('.remaining-cards')
 const betAmountElem = document.querySelector('.bet-amount')
 const availableBalanceElem = document.querySelector('.available-balance')
-const resultElemAll = document.querySelectorAll('.result')
-const playerResultElem = document.querySelector('.player .result')
+const resultElem = document.querySelector('.result')
 const winningsElem = document.querySelector('.winnings')
 
 // input
-const betInput = document.querySelector('.bet-input')
+const allInputs = document.querySelectorAll('input')
 const amountMoneyInput = document.querySelector('.amount-money-input')
+const betInput = document.querySelector('.bet-input')
 
 // button
 const StartBtn = document.querySelector('.start-btn')
@@ -60,7 +62,6 @@ const surrenderBtn = document.querySelector('.surrender-btn')
 
 
 
-
 // the function to show the current number of remaining cards
 const updateRemainingCards = () => {
   remainingCardsElem.textContent = shuffledDeck.length
@@ -69,10 +70,38 @@ const updateRemainingCards = () => {
 
 // the function to show the current available to bet balance
 const updateBalance = () => {
-  availableBalanceElem.textContent = `your 'available to bet' balance is: $${availableBalance}`
+  availableBalanceElem.textContent = availableBalance.toLocaleString()
 }
 
 
 // sleep function (get from internet)
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-const ms = 2000
+const dealWaitTime = 1000
+const resultWaitTime = 2000
+
+
+// the function to add thousands separators
+const regex = /,/g
+function handleInput(event) {
+  if (Number(event.target.value.replaceAll(regex, ''))) {
+    let stringToNum = Number(event.target.value.replaceAll(regex, ''))
+    event.target.value = stringToNum;
+    let numToString = Number(event.target.value).toLocaleString()
+    event.target.value = numToString;
+  } else {
+    event.target.value = ''
+  }
+}
+
+
+// call the "handleInput" function when the player input any value to the inputs
+for (let inputElem of allInputs) {
+  inputElem.addEventListener('input', handleInput)
+}
+
+
+const checkBalance = () => {
+  if (betAmount > availableBalance) {
+    doubleDownBtn.disabled = true
+  }
+}

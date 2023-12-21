@@ -1,26 +1,30 @@
 // the function to calculate the amount of winnings
 const calculateWinnings = (person, bj, surrender, busted) => {
   if (surrender === true) {
-    availableBalance += 0.5 * betAmount
-    winningsElem.textContent = `You lost $${0.5 * betAmount}`
+    let refund = 0.5 * betAmount
+    availableBalance += refund
+    winningsElem.textContent = `$${refund.toLocaleString()} has been returned`
   } else if (person === 'player' && bj === true) {
-    availableBalance += 2.5 * betAmount
-    winningsElem.textContent = `You won $${1.5 * betAmount}`
+    let winnings = 1.5 * betAmount
+    availableBalance += winnings + betAmount
+    winningsElem.textContent = `You won $${winnings.toLocaleString()}`
   } else if (person === 'dealer' && bj === true) {
-    winningsElem.textContent = `You lost $${betAmount}`
+    winningsElem.textContent = `You lost $${betAmount.toLocaleString()}`
   } else if (person === 'player' && busted === true) {
-    winningsElem.textContent = `You lost $${betAmount}`
+    winningsElem.textContent = `You lost $${betAmount.toLocaleString()}`
   } else if (person === 'dealer' && busted === true) {
-    availableBalance += 2 * betAmount
-    winningsElem.textContent = `You won $${betAmount}`
+    let winnings = betAmount
+    availableBalance += 2 * winnings
+    winningsElem.textContent = `You won $${winnings.toLocaleString()}`
   } else if (person === 'player') {
-    availableBalance += 2 * betAmount
-    winningsElem.textContent = `You won $${betAmount}`
+    let winnings = betAmount
+    availableBalance += 2 * winnings
+    winningsElem.textContent = `You won $${winnings.toLocaleString()}`
   } else if (person === 'dealer') {
-    winningsElem.textContent = `You lost $${betAmount}`
+    winningsElem.textContent = `You lost $${betAmount.toLocaleString()}`
   } else {
-    winningsElem.textContent = 'Your bet amount has been returned'    
     availableBalance += betAmount
+    winningsElem.textContent = `$${betAmount.toLocaleString()} has been returned`  
   }
   setTimeout(init, 2500)
 }

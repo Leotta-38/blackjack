@@ -1,53 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Caveat:wght@700&family=Love+Ya+Like+A+Sister&family=Rubik+Doodle+Shadow&display=swap');
+
+@font-face {
+  font-family: 'dseg7-modern';
+  src: url('../fonts/DSEG7ModernMini-Regular.ttf') format('truetype');
+}
+
+/* Global */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  border: 4px dotted grey;
-  padding: 10px;
-}
-
-.house-rule {
-  padding: 10px;
-  margin: 20px;
-  border: 1px solid grey;
-}
-
-
-/* * {
-  box-sizing: border-box;
-}
-
 body {
-  height: 100vh;
-  font-family: sans-serif;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  border: 4px dotted grey;
-  padding: 10px;
+  background-color: rgb(142, 204, 142);
+  font-family: 'Abel';
 }
 
 button {
-  display: block;
   margin: 10px auto;
-  padding: 10px;
-  font-size: 16px;
-  color: grey;
-  border: 1px solid grey;
-  border-radius: 4px;
-  outline: none;
+  padding: 10px 15px;
+  font-size: 3vh;
+  border-radius: 15px;
+  border: 1px solid #555555;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
-  background-color: grey;
-  color: white;
-} */
+  opacity: 1;
+}
+
+input {
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 3vh;
+  color: #999;
+  text-align: right;
+  border-radius: 5px;
+  border: 1px solid #666;
+}
+
+/* header & footer */
+header, footer {
+  height: 6vh;
+  background-image: url('../imgs/cards_pattern.png');
+  background-size: 10vh;
+  background-repeat: repeat-x;
+}
+
+footer {
+  background-position: bottom;
+}
+
+
+/* starting screen */
+.starting-screen {
+  text-align: center;
+}
+
+h1 {
+  font-size: 14vh;
+  font-family: 'Rubik Doodle Shadow';
+  margin: 10vh 0 6vh 0;
+}
+
+.starting-screen p {
+  font-size: 3vh;
+}
+
+.start-btn {
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 4vh;
+  box-shadow: 0 7px #999999;
+}
+
+.start-btn:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+
+/* house-rules */
+.house-rules {
+  width: 65%;
+  margin: 4vh auto;
+  border: 8px solid #b2771f;
+  background: #247150;
+  color: #ffffff;
+  box-shadow: 2px 2px 4px #999999, 2px 2px 2px #004200 inset;
+  padding: 15px;
+  font-family: 'Caveat';
+}
+
+.house-rules p {
+  display: inline-block;
+  font-size: 4vh;
+  margin-bottom: 0.4em;
+  border-bottom: 1px solid #ffffff;
+}
+
+ul {
+  margin-left: 20px;
+  padding-left: 0px;
+}
+
+li {
+  font-size: 2.5vh;
+  margin-bottom: 0.1em;
+}
+
+.during-game {
+  width: 20%;
+  position: absolute;
+  right: 0;
+  margin-right: 20px
+}
+
+
+/* game */
+.game {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 5vh;
+  font-family: 'Rubik Doodle Shadow';
+  margin: 2.5vh 0;
+}
+
+/* deck place */
+.deck-place {
+  position: absolute;
+  margin-left: 20px;
+}
+
+.deck-place p {
+  font-size: 2.5vh;
+}
+
+/* game field */
+h3 {
+  font-size: 4vh;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  height: 8em;
+  align-content: center;
+  font-size: 2.8vh;
+}
+
+.result-display {
+  height: 6.5vh;
+  width: 35%;
+  margin: 0 auto;
+  background-color: #f7e69a;
+  border: 3px double #888888
+}
+
+.result {
+  font-size: 4.5vh;
+}
+
+.dealer-img {
+  height: 14vh;
+}
+
+
+/* bet status */
+.bet-status {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-left: 20px;
+  width: 20%;
+}
+
+.bet-discription {
+  font-size: 2.5vh;
+}
+
+.available-balance {
+  font-family: 'dseg7-modern';
+  background-color: #333;
+  color: #eee;
+  font-size: 5vh;
+  padding: 10px;
+}
+
+/* buttons */
+.buttons {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 20px;
+}
+
+.split-btn {
+  display: none;
+}
