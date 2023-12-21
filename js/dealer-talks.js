@@ -9,7 +9,7 @@ const dealerTalks = async (start, result) => {
     await sleep(dealWaitTime)
     dealerCommentElem.textContent = 'Welcome!'
   } else {
-    let randomNum = Math.floor(Math.random() * dealerComment[result].length)
+    let randomNum = Math.floor(Math.random() * dealerComment[result].length * 2)
     dealerCommentElem.textContent = dealerComment[result][randomNum]
   }
 }

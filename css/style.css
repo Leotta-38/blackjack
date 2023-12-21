@@ -20,12 +20,13 @@ body {
 button {
   margin: 10px auto;
   padding: 10px 15px;
-  font-size: 3vh;
+  font-size: 2.5vh;
   border-radius: 15px;
   border: 1px solid #555555;
   opacity: 0.8;
   cursor: pointer;
   transition: 0.3s;
+  font-family: 'Love Ya Like A Sister', cursive;
 }
 
 button:hover {
@@ -72,7 +73,6 @@ h1 {
 }
 
 .start-btn {
-  font-family: 'Love Ya Like A Sister', cursive;
   font-size: 4vh;
   box-shadow: 0 7px #999999;
 }
@@ -124,20 +124,21 @@ li {
 .game {
   text-align: center;
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 1.5vh;
 }
 
 h2 {
-  font-size: 5vh;
+  font-size: 5.5vh;
   font-family: 'Rubik Doodle Shadow';
-  margin: 2.2vh 0;
+  margin-top: 1.5vh;
+  margin-bottom: 2vh;
 }
 
 /* deck place */
 .deck-place {
   position: absolute;
   margin-left: 20px;
-  font-size: 2.8vh;
+  font-size: 3vh;
 }
 
 .deck-place p {
@@ -147,7 +148,7 @@ h2 {
 
 /* game field */
 h3 {
-  font-size: 3.5vh;
+  font-size: 3.2vh;
 }
 
 .card-container {
@@ -157,7 +158,7 @@ h3 {
   padding: 10px;
   height: 8em;
   align-content: center;
-  font-size: 2.8vh;
+  font-size: 3vh;
 }
 
 .result-display {
@@ -183,9 +184,9 @@ h3 {
 .dealer-comment {
   width: 30vw;
   display: block;
-  position: relative;
-  top: 7vh;
-  left: 52vw;
+  position: absolute;
+  top: 7.5vh;
+  left: 52.5vw;
   font-size: 2.5vh;
   text-align: left;
 }
@@ -222,6 +223,26 @@ h3 {
   right: 0;
   bottom: 0;
   margin-right: 20px;
+}
+
+.buttons button {
+  margin-left: 10px;
+}
+
+.stand-btn {
+  background-color: #dad4fa;
+}
+
+.hit-btn {
+  background-color: #fad4db;
+}
+
+.double-down-btn {
+  background-color: #faf5d4;
+}
+
+.surrender-btn {
+  background-color: #d6fad4;
 }
 
 .split-btn {

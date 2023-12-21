@@ -31,6 +31,8 @@ let ifBj = false
 // boolean of busted status
 let ifBusted = false
 
+// boolean of double status
+let ifDouble = false
 
 
 // caching dom element references

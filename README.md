@@ -60,7 +60,15 @@ description
 
 - Split, insurance and even money
 
+- Settings players can change
+
+  - H17 Game or S17 Game
+
 - Available for multiple players
+
+- Online playing with multiple players
+
+- Responsive design
 
 ## Special thanks
 

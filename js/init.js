@@ -62,15 +62,10 @@ const init = () => {
   }
 
   // reset the result message
-    resultElem.textContent = ''
-
-  // disable all the button except bet
-  standBtn.disabled = true
-  hitBtn.disabled = true
-  doubleDownBtn.disabled = true
-  surrenderBtn.disabled = true
+  resultElem.textContent = ''
 
   // reset ifBj & ifBusted
   ifBj = false
   ifBusted = false
+  ifDouble = false
 }

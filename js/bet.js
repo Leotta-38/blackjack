@@ -18,7 +18,7 @@ const betMoney = () => {
 const handleClickBetBtn = async () =>  {
   if (betMoney()) {
     winningsElem.textContent = ''
-    dealerCommentElem.innerHTML = '</br>'
+    dealerCommentElem.textContent = ''
     for (let person of people) {
       for (let i = 1; i < 3; i++) {
         await sleep(dealWaitTime)
