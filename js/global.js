@@ -27,6 +27,9 @@ let betAmount = 0
 // boolean of blackjack status
 let ifBj = false
 
+// boolean of busted status
+let ifBusted = false
+
 
 
 // caching dom element references
@@ -39,6 +42,7 @@ const remainingCardsElem = document.querySelector('.remaining-cards')
 const betAmountElem = document.querySelector('.bet-amount')
 const availableBalanceElem = document.querySelector('.available-balance')
 const resultElemAll = document.querySelectorAll('.result')
+const playerResultElem = document.querySelector('.player .result')
 const winningsElem = document.querySelector('.winnings')
 
 // input

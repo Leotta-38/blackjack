@@ -72,6 +72,7 @@ const init = () => {
   doubleDownBtn.disabled = true
   surrenderBtn.disabled = true
 
-  // reset ifBj
+  // reset ifBj & ifBusted
   ifBj = false
+  ifBusted = false
 }

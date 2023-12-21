@@ -19,12 +19,17 @@ const checkIfUnder17 = () => {
 const stand = async () => {
   const backBlueElem = document.querySelector('#back-blue')
   backBlueElem.removeAttribute('id')
-  await sleep(1000)
   while (checkIfUnder17()) {
+    ifBusted = true
+    await sleep(1000)
     dealCard('dealer')
     checkifBusted('dealer')
-    await sleep(1000)
-  }    
+  }
+  await sleep(1000)
+  if (!ifBusted) {
+    console.log('test');
+    checkWhoWins()
+  }
 }
 
 // define the function which is called when the player click the "stand" button
