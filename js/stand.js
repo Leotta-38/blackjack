@@ -27,7 +27,6 @@ const stand = async () => {
   }
   await sleep(1000)
   if (!ifBusted) {
-    console.log('test');
     checkWhoWins()
   }
 }
