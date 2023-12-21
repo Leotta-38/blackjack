@@ -1,5 +1,5 @@
 // the function to show the current available to bet balance
-const dealCard = (person, count) => {
+const dealCard = (person, count, double) => {
 
   // pick up the first card from shuffled deck and delete it from the deck
   let dealedCard = shuffledDeck[0]
@@ -10,7 +10,11 @@ const dealCard = (person, count) => {
   elem.className = `card ${dealedCard.face}`
   if (person === 'dealer' && count === 2) {
     elem.setAttribute('id', 'back-blue')
+  } else if (double === true) {
+    elem.classList.add('west')
   }
+
+  dealCardSound()
   
   const personCardsElem = document.querySelector(`.${person} .card-container`)
   personCardsElem.appendChild(elem)

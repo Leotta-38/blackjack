@@ -8,7 +8,8 @@ const checkifBJ = async (person) => {
       backBlueElem.removeAttribute('id')
     }
     await sleep(resultWaitTime)
-    resultElem.textContent = `${person} BLACKJACK!!!`
+    let modPerson = person[0].toUpperCase() + person.slice(1)
+    resultElem.textContent = `${modPerson} BLACKJACK!!!`
     calculateWinnings(person, true, false, false)
   }
 }

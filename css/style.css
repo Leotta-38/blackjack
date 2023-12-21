@@ -124,28 +124,30 @@ li {
 .game {
   text-align: center;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 h2 {
   font-size: 5vh;
   font-family: 'Rubik Doodle Shadow';
-  margin: 2.5vh 0;
+  margin: 2.2vh 0;
 }
 
 /* deck place */
 .deck-place {
   position: absolute;
   margin-left: 20px;
+  font-size: 2.8vh;
 }
 
 .deck-place p {
   font-size: 2.5vh;
 }
 
+
 /* game field */
 h3 {
-  font-size: 4vh;
+  font-size: 3.5vh;
 }
 
 .card-container {
@@ -159,7 +161,7 @@ h3 {
 }
 
 .result-display {
-  height: 6.5vh;
+  height: 5.5vh;
   width: 35%;
   margin: 0 auto;
   background-color: #f7e69a;
@@ -167,11 +169,25 @@ h3 {
 }
 
 .result {
-  font-size: 4.5vh;
+  font-size: 4vh;
+}
+
+.dealer {
+  position: relative;
 }
 
 .dealer-img {
   height: 14vh;
+}
+
+.dealer-comment {
+  width: 30vw;
+  display: block;
+  position: relative;
+  top: 7vh;
+  left: 52vw;
+  font-size: 2.5vh;
+  text-align: left;
 }
 
 
@@ -182,18 +198,22 @@ h3 {
   bottom: 0;
   margin-left: 20px;
   width: 20%;
+  text-align: left;
 }
 
 .bet-discription {
   font-size: 2.5vh;
+  margin-left: 10px;
 }
 
-.available-balance {
+.balance-wrap {
   font-family: 'dseg7-modern';
   background-color: #333;
   color: #eee;
   font-size: 5vh;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* buttons */

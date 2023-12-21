@@ -9,7 +9,9 @@
   <link href="css/card-library/css/cardstarter.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="css/style.css">
   <script defer src="js/global.js"></script>
+  <script defer src="js/sounds.js"></script>
   <script defer src="js/start.js"></script>
+  <script defer src="js/dealer-talks.js"></script>
   <script defer src="js/deal-card.js"></script>
   <script defer src="js/init.js"></script>
   <script defer src="js/bet.js"></script>
@@ -36,14 +38,19 @@
     <p>House Rules</p>
     <ul>
       <li>Minimum bet $1</li>
-      <li>Dealer must stand on all 17's</li>
+      <li>S17 Game</li>
+      <ul class="disappear">
+        <li>Dealer must stand on all hands totaling 17 (including Soft 17) or higher.</li>
+      </ul>
       <li>6 decks</li>
       <li>Penetration 70%</li>
-      <li>Blackjack pays 3 to 2</li>
       <ul class="disappear">
-        <li>You will win if you get a Blackjack, regardless of the dealer's hand.</li>
-        <li>The dealer will check what his hole card is if you do not have a Blackjack. If he gets a Blackjack, he will reveal it immediately.</li>
+        <li>Cards will be shuffled if the number of the remaining cards in the deck becomes less than 30% when a new round starts.</li>
       </ul>
+      <li>Blackjack pays 3 to 2</li>
+      <li class="disappear">You will win if you get a Blackjack, regardless of the dealer's hand.</li>
+      <li class="disappear">The dealer will check what his hole card is if you do not have a Blackjack. If he gets a Blackjack, he will reveal it immediately.</li>
+      <li class="disappear">Surrender means you will give up the round and you will get back half of your bet amount.</li>
     </ul>
   </section>
 
@@ -58,7 +65,8 @@
     
     <section class="game-field">
       <div class="dealer">
-        <h3>dealer</h3>
+        <h3>Dealer</h3>
+        <p class="dealer-comment"><br></p>
         <img src="imgs/casino_dealer_man.png" alt="casino_dealer_man" class="dealer-img">
         <div class="card-container"></div>
       </div>
@@ -69,27 +77,37 @@
       
       <div class="player">
         <div class="card-container"></div>
-        <h3>player</h3>
+        <h3>Player</h3>
       </div>
     </section>
     
     <section class="bet-status">
       <div class="bet-discription">
         <p class="winnings"></p>
-        <p>your bet amount: $<span class="bet-amount"></span></p>
+        <p>Your bet amount: $<span class="bet-amount"></span></p>
       </div>
       <input class="bet-input" type="text">
-      <button class="bet-btn">bet</button>
-      <p class="available-balance"></p>
+      <button class="bet-btn">Bet</button>
+      <p class="balance-wrap"><span>$</span><span class="available-balance"></span></p>
     </section>
     
     <section class="buttons">
-      <button class="stand-btn">stand</button>
-      <button class="hit-btn">hit</button>
-      <button class="double-down-btn">double down</button>
-      <button disabled class="split-btn">split</button>
-      <button class="surrender-btn">surrender</button>
+      <button class="stand-btn">Stand</button>
+      <button class="hit-btn">Hit</button>
+      <button class="double-down-btn">Double down</button>
+      <button disabled class="split-btn">Split</button>
+      <button class="surrender-btn">Surrender</button>
     </section>
+  </section>
+
+  <section class="sounds">
+    <audio class="sound_deal_card">
+      <source src="sounds/card_deal.mp3" type="audio/mp3">
+    </audio>
+    <audio class="sound_shuffle_card">
+      <source src="sounds/card_shuffle.mp3" type="audio/mp3">
+    </audio>
+
   </section>
 
   <footer></footer>

@@ -5,9 +5,12 @@ const handleClickStartBtn = () =>  {
     originalDeck = buildOriginalDeck()
     init();
     startingScreenElem.style.display = 'none'
-    disappearElem.style.display = 'none'
+    for (let disappearElem of disappearElemAll) {
+      disappearElem.style.display = 'none'
+    }
     gameElem.style.display = 'block'
     houseRuleElem.classList.add('during-game')
+    dealerTalks(true)
   }
 }
 

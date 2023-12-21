@@ -6,7 +6,7 @@ const double = async () => {
   
   await sleep(dealWaitTime)
   ifBusted = true
-  dealCard('player')
+  dealCard('player', 0, true)
   await sleep(dealWaitTime)
   checkifBusted('player')
   if (!ifBusted) {

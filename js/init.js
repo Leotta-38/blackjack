@@ -39,6 +39,7 @@ const init = () => {
   // Penetration 70%
   if (shuffledDeck.length < originalDeck.length * 0.3) {
     shuffledDeck = getNewShuffledDeck()
+    shuffleCardSound()
   }
 
   updateRemainingCards()

@@ -38,9 +38,10 @@ let ifBusted = false
 // elem
 const startingScreenElem = document.querySelector('.starting-screen')
 const houseRuleElem = document.querySelector('.house-rules')
-const disappearElem = document.querySelector('.disappear')
+const disappearElemAll = document.querySelectorAll('.disappear')
 const gameElem = document.querySelector('.game')
 const remainingCardsElem = document.querySelector('.remaining-cards')
+const dealerCommentElem = document.querySelector('.dealer-comment')
 const betAmountElem = document.querySelector('.bet-amount')
 const availableBalanceElem = document.querySelector('.available-balance')
 const resultElem = document.querySelector('.result')
@@ -60,6 +61,9 @@ const doubleDownBtn = document.querySelector('.double-down-btn')
 const splitBtn = document.querySelector('.split-btn')
 const surrenderBtn = document.querySelector('.surrender-btn')
 
+// sound
+const soundDealCardElem = document.querySelector('.sound_deal_card')
+const soundShuffleCardElem = document.querySelector('.sound_shuffle_card')
 
 
 // the function to show the current number of remaining cards

@@ -6,6 +6,10 @@ description
 
 ## [Click here](https://leotta-38.github.io/blackjack/) to play Blackjack
 
+## Screenshot
+
+![screenshot](/imgs/screenshot.png)
+
 ## Notice
 
 - Do not look at the code if you do not want to lose the pleasure of playing the game.
@@ -15,6 +19,10 @@ description
 - There might be a short lag after clicking a button.
 
 - Split, insurance and even money have not been implemented
+
+- Use your computer or tablet. No smartphone...
+
+- Please do not bring a fuge amount of money. It's too dangerous!!
 
 ## memo
 
@@ -36,6 +44,8 @@ description
 
 ## Cool Tech
 
+## What was challenging
+
 ## Bugs to fix
 
 - 多分、ポーズした時に先処理されてしまっているものがある、、、けど確認できてない
@@ -51,3 +61,7 @@ description
 - Split, insurance and even money
 
 - Available for multiple players
+
+## Special thanks
+
+- Chris
