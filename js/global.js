@@ -75,3 +75,4 @@ const updateBalance = () => {
 
 // sleep function (get from internet)
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const ms = 2000

@@ -1,6 +1,6 @@
 const hit = async () => {
   dealCard('player')
-  await sleep(1000)
+  await sleep(ms)
   checkifBusted('player')
 }
 

@@ -4,11 +4,11 @@ const checkifBJ = async (person) => {
   if (handValue[person][1] === 21) {
     ifBj = true
     if(person === 'dealer') {
-      await sleep(1000)
+      await sleep(ms)
       const backBlueElem = document.querySelector('#back-blue')
       backBlueElem.removeAttribute('id')
     }
-    await sleep(1000)
+    await sleep(ms)
     personResultsElem.textContent = 'BLACKJACK!!!'
     calculateWinnings(person, true, false, false)
   }

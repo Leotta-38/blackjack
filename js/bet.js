@@ -19,7 +19,7 @@ const handleClickBetBtn = async () =>  {
     winningsElem.textContent = ''
     for (let person of people) {
       for (let i = 1; i < 3; i++) {
-        await sleep(1000)
+        await sleep(ms)
         dealCard(person, i)
       }
     }

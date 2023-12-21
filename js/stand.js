@@ -21,11 +21,11 @@ const stand = async () => {
   backBlueElem.removeAttribute('id')
   while (checkIfUnder17()) {
     ifBusted = true
-    await sleep(1000)
+    await sleep(ms)
     dealCard('dealer')
     checkifBusted('dealer')
   }
-  await sleep(1000)
+  await sleep(ms)
   if (!ifBusted) {
     checkWhoWins()
   }

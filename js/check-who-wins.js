@@ -1,6 +1,8 @@
 const checkWhoWins = () => {
-  let checkIfPlayerHasA = handValue.player.length
-  let checkIfDealerHasA = handValue.dealer.length
+  let checkIfPlayerHasA = handValue.player.length - 1
+  let checkIfDealerHasA = handValue.dealer.length - 1
+  console.log(checkIfDealerHasA);
+  console.log(checkIfPlayerHasA);
   if (handValue.player[checkIfPlayerHasA] < handValue.dealer[checkIfDealerHasA]) {
     playerResultElem.textContent = "Your hand is smaller than the dealer's"
     calculateWinnings('dealer', false, false, false) 
