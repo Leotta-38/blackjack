@@ -111,3 +111,4 @@ function handleInput(event) {
 for (let inputElem of allInputs) {
   inputElem.addEventListener('input', handleInput)
 }
+

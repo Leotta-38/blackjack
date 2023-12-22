@@ -46,7 +46,9 @@ Please enjoy my game as long as you don't go broke!
 
 ![blackjack-game-flow](/imgs/blackjack-game-flow.jpg)
 
-## Cool Tech
+## What I like about my game
+
+- Single-page app
 
 - Thousands separators
 
