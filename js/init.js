@@ -64,8 +64,10 @@ const init = () => {
   // reset the result message
   resultElem.textContent = ''
 
-  // reset ifBj & ifBusted
-  ifBj = false
-  ifBusted = false
-  ifDouble = false
+  // reset ifBj, ifBusted and ifDouble
+  eachStatus = {
+    ifBj: false,
+    ifBusted: false,
+    ifDouble: false
+  }
 }

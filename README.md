@@ -1,7 +1,9 @@
 # My first web application - Blackjack
 
 ```
-description
+Blackjack is one of the most widely enjoyed casino games all over the world because of its simple rules.
+Unlike other casinos, the dealer here is pleasant and may sometimes get a bit excited.
+Please enjoy my game as long as you don't go broke!
 ```
 
 ## [Click here](https://leotta-38.github.io/blackjack/) to play Blackjack
@@ -10,65 +12,95 @@ description
 
 ![screenshot](/imgs/screenshot.png)
 
-## Notice
+## Notice for players
 
-- Do not look at the code if you do not want to lose the pleasure of playing the game.
+- Do not look at the code while you are playing the game if you do not want to lose the pleasure of playing it.
 
 - Do not click the buttons many times, or the game would break.
 
 - There might be a short lag after clicking a button.
 
-- Split, insurance and even money have not been implemented
+- Use your computer or tablet, not smartphone.
 
-- Use your computer or tablet. No smartphone...
+- Please do not bring large sums of money. You'd go bankrupt!!
 
-- Please do not bring a fuge amount of money. It's too dangerous!!
+## Game specifications
 
-## memo
+- Split, insurance and even money have not been implemented.
 
-- You can only bet in whole dollar amounts (each bet amount cannot exceed the amount of money you have)
+- You can only bet in whole dollar amounts (each bet amount cannot exceed the amount of money you have).
 
-- Double down and split is not allowed if you do not have enough money
+- Double down is not allowed if you do not have enough money.
 
 ## Planning
 
-- potential problems
+- Potential problems
 
-  - Ace...
+  - How to deal with Ace. Its value can be either 1 or 11 depending on the situation.  
 
-  - pause a game
+  - In some cases, it might be better or necessary to have a pause between each process. For example, to produce an animation in which each card is dealt one by one.
 
-- Flow charts of app logic
+  - There is a high risk of a bug if the player clicks any buttons while a process is being executed.
+
+- Flow chart of app logic
 
 ![blackjack-game-flow](/imgs/blackjack-game-flow.jpg)
 
 ## Cool Tech
 
+- Thousands separators
+
+- A dealer who talks to you
+
 ## What was challenging
+
+- To identify how to make the game work properly, and create the flow chart.
+
+- To consider designs and implement features that can improve UX
+
+- To identify the cause of a failure when my code didn't work as expected, even though there was no error message in the console.
 
 ## Bugs to fix
 
-- 多分、ポーズした時に先処理されてしまっているものがある、、、けど確認できてない
+- So far no bugs have been found, but there may be some hidden ones.
 
-- ポーズ中のクリックを受け付けないようにしたい
-
-- 
-
-## Lessons learnt
-
-## future features
+## Future features
 
 - Split, insurance and even money
 
-- Settings players can change
+- Casino chips
 
-  - H17 Game or S17 Game
+- Players can change some house rules, like selecting either H17 Game or S17 Game
 
 - Available for multiple players
 
-- Online playing with multiple players
+- Online playing for players who are in different locations
 
 - Responsive design
+
+## Resources
+
+- Fonts
+
+  - Google Fonts
+
+  - DSEG7 (by けしかん (http://www.keshikan.net/))
+
+- Sounds
+
+  - When shuffling and dealing cards (by On-Jin ～音人～ (https://on-jin.com/))
+
+  - When a player gets a Blackjack (by 効果音ラボ (https://soundeffect-lab.info/sound/voice/people.html))
+
+- Images
+
+  - Header and footer (by iStock (https://www.istockphoto.com/))
+
+  - Dealer (by いらすとや (https://www.irasutoya.com/))
+
+- Libraries
+
+  - CSS Card library (by GA)
 
 ## Special thanks
 

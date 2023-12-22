@@ -20,14 +20,14 @@ const stand = async () => {
   const backBlueElem = document.querySelector('#back-blue')
   backBlueElem.removeAttribute('id')
   while (checkIfUnder17()) {
-    ifBusted = true
+    eachStatus.ifBusted = true
     await sleep(dealWaitTime)
     dealCard('dealer')
-    await sleep(resultWaitTime)
+    // await sleep(resultWaitTime)
     checkifBusted('dealer')
   }
   await sleep(resultWaitTime)
-  if (!ifBusted) {
+  if (!eachStatus.ifBusted) {
     checkWhoWins()
   }
 }
@@ -35,10 +35,7 @@ const stand = async () => {
 // define the function which is called when the player click the "stand" button
 const handleClickStandBtn = () => {
   stand()
-  standBtn.disabled = true
-  hitBtn.disabled = true
-  doubleDownBtn.disabled = true
-  surrenderBtn.disabled = true
+  initButtons()
 }
 
 // call the "handleClickStandBtn" function when the player click the "stand" button

@@ -14,28 +14,32 @@ const betMoney = () => {
   }
 }
 
+
 // define the function which is called when the player click the "bet" button
 const handleClickBetBtn = async () =>  {
   if (betMoney()) {
     winningsElem.textContent = ''
     dealerCommentElem.textContent = ''
+
     for (let person of people) {
       for (let i = 1; i < 3; i++) {
         await sleep(dealWaitTime)
-        dealCard(person, i)
+        dealCard(person, i, false)
       }
     }
+    
     checkifBJ('player')
-    if (!ifBj) {
+    if (!eachStatus.ifBj) {
       checkifBJ('dealer')
-      if (!ifBj) {
+      if (!eachStatus.ifBj) {
         standBtn.disabled = false
         hitBtn.disabled = false
-        doubleDownBtn.disabled = false
+        if (betAmount <= availableBalance) {
+          doubleDownBtn.disabled = false
+        }
         surrenderBtn.disabled = false
       }
     }
-    checkBalance()
   }
 }
 

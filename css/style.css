@@ -125,6 +125,7 @@ li {
   text-align: center;
   position: relative;
   margin-bottom: 1.5vh;
+  display: none;
 }
 
 h2 {
@@ -155,10 +156,9 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 10px;
   height: 8em;
   align-content: center;
-  font-size: 3vh;
+  font-size: 3.15vh;
 }
 
 .result-display {
@@ -178,7 +178,7 @@ h3 {
 }
 
 .dealer-img {
-  height: 14vh;
+  height: 12vh;
 }
 
 .dealer-comment {

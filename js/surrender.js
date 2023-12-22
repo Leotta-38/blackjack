@@ -6,10 +6,7 @@ const surrender = () => {
 // define the function which is called when the player click the "surrender" button
 const handleClickSurrenderBtn = () => {
   surrender()
-  standBtn.disabled = true
-  hitBtn.disabled = true
-  doubleDownBtn.disabled = true
-  surrenderBtn.disabled = true
+  initButtons()
 }
 
 // call the "handleClickSurrenderBtn" function when the player click the "surrender" button

@@ -5,12 +5,12 @@ const double = async () => {
   updateBalance()
   
   await sleep(dealWaitTime)
-  ifBusted = true
+  eachStatus.ifBusted = true
   dealCard('player', 0, true)
   await sleep(dealWaitTime)
-  ifDouble = true
+  eachStatus.ifDouble = true
   checkifBusted('player')
-  if (!ifBusted) {
+  if (!eachStatus.ifBusted) {
     stand()
   }
 }
@@ -18,10 +18,7 @@ const double = async () => {
 // define the function which is called when the player click the "double down" button
 const handleClickDoubleDownBtn = () => {
   double()
-  standBtn.disabled = true
-  hitBtn.disabled = true
-  doubleDownBtn.disabled = true
-  surrenderBtn.disabled = true
+  initButtons()
 }
 
 // call the "handleClickDoubleDownBtn" function when the player click the "double down" button

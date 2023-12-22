@@ -1,9 +1,13 @@
 // the function to show the current available to bet balance
 const dealCard = (person, count, double) => {
 
+  // call the function to make a deal-card-sound
+  dealCardSound()
+
   // pick up the first card from shuffled deck and delete it from the deck
   let dealedCard = shuffledDeck[0]
   shuffledDeck.shift()
+  updateRemainingCards()
 
   // create new div for each card and show it on the screen
   const elem = document.createElement('div')
@@ -13,9 +17,6 @@ const dealCard = (person, count, double) => {
   } else if (double === true) {
     elem.classList.add('west')
   }
-
-  dealCardSound()
-  
   const personCardsElem = document.querySelector(`.${person} .card-container`)
   personCardsElem.appendChild(elem)
 
@@ -35,5 +36,4 @@ const dealCard = (person, count, double) => {
     handValue[person].pop()
   }
 
-  updateRemainingCards()
 }

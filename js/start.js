@@ -10,16 +10,10 @@ const handleClickStartBtn = () =>  {
     }
     gameElem.style.display = 'block'
     houseRuleElem.classList.add('during-game')
-    dealerTalks(true)
+    dealerTalks('greeting')
   }
 }
 
 
 // call the "handleClickStartBtn" function when the player click the "start" button
 StartBtn.addEventListener('click', handleClickStartBtn)
-
-
-// call the functions when the page is reloaded 
-window.onload = () => {
-  gameElem.style.display = 'none'
-}

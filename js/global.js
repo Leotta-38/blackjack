@@ -1,4 +1,3 @@
-
 // template to make the cards
 const suits = ['s', 'c', 'd', 'h'];
 const ranks = ['02', '03', '04', '05', '06', '07', '08', '09', '10', 'J', 'Q', 'K', 'A'];
@@ -20,19 +19,17 @@ let handValue = {
 }
 
 // the current available to bet balance
-let availableBalance
+let availableBalance = 0
 
-// the bet amount
+// the player's bet amount
 let betAmount = 0
 
-// boolean of blackjack status
-let ifBj = false
-
-// boolean of busted status
-let ifBusted = false
-
-// boolean of double status
-let ifDouble = false
+// boolean of each status
+let eachStatus = {
+  ifBj: false,
+  ifBusted: false,
+  ifDouble: false
+}
 
 
 // caching dom element references
@@ -66,6 +63,7 @@ const surrenderBtn = document.querySelector('.surrender-btn')
 // sound
 const soundDealCardElem = document.querySelector('.sound_deal_card')
 const soundShuffleCardElem = document.querySelector('.sound_shuffle_card')
+const soundApplauseElem = document.querySelector('.sound_applause')
 
 
 // the function to show the current number of remaining cards
@@ -80,7 +78,16 @@ const updateBalance = () => {
 }
 
 
-// sleep function (get from internet)
+// thhe function to initialise the buttons
+const initButtons = () => {
+  standBtn.disabled = true
+  hitBtn.disabled = true
+  doubleDownBtn.disabled = true
+  surrenderBtn.disabled = true
+}
+
+
+// sleep function (just copied from internet)
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const dealWaitTime = 1000
 const resultWaitTime = 2000
@@ -103,11 +110,4 @@ function handleInput(event) {
 // call the "handleInput" function when the player input any value to the inputs
 for (let inputElem of allInputs) {
   inputElem.addEventListener('input', handleInput)
-}
-
-
-const checkBalance = () => {
-  if (betAmount > availableBalance) {
-    doubleDownBtn.disabled = true
-  }
 }
